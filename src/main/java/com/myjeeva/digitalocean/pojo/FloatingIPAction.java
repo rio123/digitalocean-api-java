@@ -20,9 +20,10 @@
  */
 package com.myjeeva.digitalocean.pojo;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 /**
  * Represents Floating IP Action attributes
@@ -32,70 +33,77 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
  */
 public class FloatingIPAction extends Base {
 
-  private static final long serialVersionUID = -6669790006341807856L;
+	private static final long serialVersionUID = -6669790006341807856L;
 
-  @Expose
-  @SerializedName("droplet_id")
-  private Integer dropletId;
+	@Expose
+	@SerializedName("droplet_id")
+	private String dropletId;
 
-  @Expose private String region;
+	@Expose
+	private String region;
 
-  @Expose private String type;
+	@Expose
+	private String type;
 
-  public FloatingIPAction() {
-    // default constructor
-  }
+	public FloatingIPAction() {
+		// default constructor
+	}
 
-  public FloatingIPAction(Integer dropletId) {
-    this(dropletId, null, null);
-  }
+	public FloatingIPAction(String region) {
+		this(null, region, null);
+	}
 
-  public FloatingIPAction(String region) {
-    this(null, region, null);
-  }
+	public FloatingIPAction(String dropletId, String type) {
+		this(dropletId, null, type);
+	}
 
-  public FloatingIPAction(Integer dropletId, String type) {
-    this(dropletId, null, type);
-  }
+	public FloatingIPAction(String dropletId, String region, String type) {
+		this.dropletId = dropletId;
+		this.region = region;
+		this.type = type;
+	}
 
-  public FloatingIPAction(Integer dropletId, String region, String type) {
-    this.dropletId = dropletId;
-    this.region = region;
-    this.type = type;
-  }
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 
-  @Override
-  public String toString() {
-    return ReflectionToStringBuilder.toString(this);
-  }
+	/** @return the dropletId */
+	public String getDropletId() {
+		return dropletId;
+	}
 
-  /** @return the dropletId */
-  public Integer getDropletId() {
-    return dropletId;
-  }
+	/**
+	 * @param dropletId
+	 *             the dropletId to set
+	 */
+	public void setDropletId(String dropletId) {
+		this.dropletId = dropletId;
+	}
 
-  /** @param dropletId the dropletId to set */
-  public void setDropletId(Integer dropletId) {
-    this.dropletId = dropletId;
-  }
+	/** @return the region */
+	public String getRegion() {
+		return region;
+	}
 
-  /** @return the region */
-  public String getRegion() {
-    return region;
-  }
+	/**
+	 * @param region
+	 *             the region to set
+	 */
+	public void setRegion(String region) {
+		this.region = region;
+	}
 
-  /** @param region the region to set */
-  public void setRegion(String region) {
-    this.region = region;
-  }
+	/** @return the type */
+	public String getType() {
+		return type;
+	}
 
-  /** @return the type */
-  public String getType() {
-    return type;
-  }
-
-  /** @param type the type to set */
-  public void setType(String type) {
-    this.type = type;
-  }
+	/**
+	 * @param type
+	 *             the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
 }

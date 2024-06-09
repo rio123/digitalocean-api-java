@@ -20,12 +20,14 @@
  */
 package com.myjeeva.digitalocean.pojo;
 
+import java.util.Date;
+
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+
 import com.google.gson.annotations.SerializedName;
 import com.myjeeva.digitalocean.common.ActionStatus;
 import com.myjeeva.digitalocean.common.ActionType;
 import com.myjeeva.digitalocean.common.ResourceType;
-import java.util.Date;
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 /**
  * Represents Action attributes
@@ -35,123 +37,150 @@ import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
  */
 public class Action extends Base {
 
-  private static final long serialVersionUID = 5951525501167424430L;
+	private static final long serialVersionUID = 5951525501167424430L;
 
-  private Integer id;
+	private String id;
 
-  @SerializedName("resource_id")
-  private Long resourceId;
+	@SerializedName("resource_id")
+	private Long resourceId;
 
-  private ActionStatus status;
+	private ActionStatus status;
 
-  private ActionType type;
+	private ActionType type;
 
-  @SerializedName("resource_type")
-  private ResourceType resourceType;
+	@SerializedName("resource_type")
+	private ResourceType resourceType;
 
-  @SerializedName("started_at")
-  private Date startedAt;
+	@SerializedName("started_at")
+	private Date startedAt;
 
-  @SerializedName("completed_at")
-  private Date completedAt;
+	@SerializedName("completed_at")
+	private Date completedAt;
 
-  private Region region;
+	private Region region;
 
-  @SerializedName("region_slug")
-  private String regionSlug;
+	@SerializedName("region_slug")
+	private String regionSlug;
 
-  @Override
-  public String toString() {
-    return ReflectionToStringBuilder.toString(this);
-  }
+	@Override
+	public String toString() {
+		return ReflectionToStringBuilder.toString(this);
+	}
 
-  /** @return the id */
-  public Integer getId() {
-    return id;
-  }
+	/** @return the id */
+	public String getId() {
+		return id;
+	}
 
-  /** @param id the id to set */
-  public void setId(Integer id) {
-    this.id = id;
-  }
+	/**
+	 * @param id
+	 *             the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  /** @return the resourceId */
-  public Long getResourceId() {
-    return resourceId;
-  }
+	/** @return the resourceId */
+	public Long getResourceId() {
+		return resourceId;
+	}
 
-  /** @param resourceId the resourceId to set */
-  public void setResourceId(Long resourceId) {
-    this.resourceId = resourceId;
-  }
+	/**
+	 * @param resourceId
+	 *             the resourceId to set
+	 */
+	public void setResourceId(Long resourceId) {
+		this.resourceId = resourceId;
+	}
 
-  /** @return the status */
-  public ActionStatus getStatus() {
-    return status;
-  }
+	/** @return the status */
+	public ActionStatus getStatus() {
+		return status;
+	}
 
-  /** @param status the status to set */
-  public void setStatus(ActionStatus status) {
-    this.status = status;
-  }
+	/**
+	 * @param status
+	 *             the status to set
+	 */
+	public void setStatus(ActionStatus status) {
+		this.status = status;
+	}
 
-  /** @return the type */
-  public ActionType getType() {
-    return type;
-  }
+	/** @return the type */
+	public ActionType getType() {
+		return type;
+	}
 
-  /** @param type the type to set */
-  public void setType(ActionType type) {
-    this.type = type;
-  }
+	/**
+	 * @param type
+	 *             the type to set
+	 */
+	public void setType(ActionType type) {
+		this.type = type;
+	}
 
-  /** @return the resourceType */
-  public ResourceType getResourceType() {
-    return resourceType;
-  }
+	/** @return the resourceType */
+	public ResourceType getResourceType() {
+		return resourceType;
+	}
 
-  /** @param resourceType the resourceType to set */
-  public void setResourceType(ResourceType resourceType) {
-    this.resourceType = resourceType;
-  }
+	/**
+	 * @param resourceType
+	 *             the resourceType to set
+	 */
+	public void setResourceType(ResourceType resourceType) {
+		this.resourceType = resourceType;
+	}
 
-  /** @return the startedAt */
-  public Date getStartedAt() {
-    return startedAt;
-  }
+	/** @return the startedAt */
+	public Date getStartedAt() {
+		return startedAt;
+	}
 
-  /** @param startedAt the startedAt to set */
-  public void setStartedAt(Date startedAt) {
-    this.startedAt = startedAt;
-  }
+	/**
+	 * @param startedAt
+	 *             the startedAt to set
+	 */
+	public void setStartedAt(Date startedAt) {
+		this.startedAt = startedAt;
+	}
 
-  /** @return the completedAt */
-  public Date getCompletedAt() {
-    return completedAt;
-  }
+	/** @return the completedAt */
+	public Date getCompletedAt() {
+		return completedAt;
+	}
 
-  /** @param completedAt the completedAt to set */
-  public void setCompletedAt(Date completedAt) {
-    this.completedAt = completedAt;
-  }
+	/**
+	 * @param completedAt
+	 *             the completedAt to set
+	 */
+	public void setCompletedAt(Date completedAt) {
+		this.completedAt = completedAt;
+	}
 
-  /** @return the region */
-  public Region getRegion() {
-    return region;
-  }
+	/** @return the region */
+	public Region getRegion() {
+		return region;
+	}
 
-  /** @param region the region to set */
-  public void setRegion(Region region) {
-    this.region = region;
-  }
+	/**
+	 * @param region
+	 *             the region to set
+	 */
+	public void setRegion(Region region) {
+		this.region = region;
+	}
 
-  /** @return the regionSlug */
-  public String getRegionSlug() {
-    return regionSlug;
-  }
+	/** @return the regionSlug */
+	public String getRegionSlug() {
+		return regionSlug;
+	}
 
-  /** @param regionSlug the regionSlug to set */
-  public void setRegionSlug(String regionSlug) {
-    this.regionSlug = regionSlug;
-  }
+	/**
+	 * @param regionSlug
+	 *             the regionSlug to set
+	 */
+	public void setRegionSlug(String regionSlug) {
+		this.regionSlug = regionSlug;
+	}
 }

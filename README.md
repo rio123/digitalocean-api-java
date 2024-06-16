@@ -1,16 +1,11 @@
 # DigitalOcean API Client for Java
 
-This is a fork of the original [jeevatkm](https://github.com/jeevatkm/digitalocean-api-java) digitalocean-api-java library.
+This is a fork of [halkeye](https://github.com/halkeye/digitalocean-api-java) which was forked from the original [jeevatkm](https://github.com/jeevatkm/digitalocean-api-java) digitalocean-api-java library.
 
 Changes:
 
-* pom changed to com.gavinmogan.digitalocean:digitalocean-api-client
-* merged in:
-  * https://github.com/jeevatkm/digitalocean-api-java/pull/123
-  * https://github.com/jeevatkm/digitalocean-api-java/pull/121
-  * https://github.com/jeevatkm/digitalocean-api-java/pull/119
-  * https://github.com/jeevatkm/digitalocean-api-java/pull/116
-  * https://github.com/jeevatkm/digitalocean-api-java/pull/115
+* Updated datatypes of IDs from int to String for droplets and actions. This was required because some IDs assigned by Digital Oceans now went of over Java's maximum integer number range.
+
 
 ## Synopsys
 
